@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tarea</title>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://unpkg.com/vis-network@9.1.2/dist/vis-network.min.js"></script>
+  <link rel="stylesheet" href="tree.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #38bdf8;
+    }
+
+    .card {
+      background: #1e293b;
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #facc15;
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .img-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .img-wrapper img {
+      max-width: 100%;
+      border-radius: 12px;
+      border: 1px solid #334155;
+    }
+
+    #chart_div {
+      margin-top: 2rem;
+      height: 500px;
+    }
+
+    #graph-container {
+      height: 700px;
+      margin-top: 2rem;
+      border: 2px dashed #38bdf8;
+      border-radius: 12px;
+    }
+
+    a {
+      color: #021633;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #facc15;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0 1rem;
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+
+    @media screen and (min-width: 768px) {
+      .img-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .img-wrapper img {
+        width: 48%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📊 Machine Learning Insights</h1>
+  </header>
+
+  <section class="card">
+    <h2>Visualización de Datos</h2>
+    <p>Imágenes que representan la fuente de datos y los datos procesados para el modelo de regresión polinomial.</p>
+    <div class="img-wrapper">
+      <img src="datosC.png" alt="Datos utilizados">
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Resultados del Modelo</h2>
+    <div id="log"></div>
+    <div id="chart_div"></div>
+    <p><strong>R² (coeficiente de determinación):</strong> mide la capacidad del modelo para explicar la variabilidad. En este caso, <strong>0.995</strong> indica un ajuste excelente.</p>
+    <p><strong>Error Cuadrático Medio (MSE):</strong> de <strong>0.0032</strong>, indica alta precisión del modelo.</p>
+    <p>Un polinomio de grado 4 puede causar <strong>sobreajuste</strong>, dificultando la generalización a nuevos datos.</p>
+  </section>
+
+  <section class="card">
+    <h2>Árbol de Decisión</h2>
+    <p>La precisión del modelo es del <strong>86.2%</strong>, lo que demuestra un buen desempeño clasificatorio.</p>
+    <div id="table-container"></div>
+    <div id="logTree"></div>
+    <div id="graph-container"></div>
+  </section>
+
+  <section class="card">
+    <h2>Repositorio del Proyecto</h2>
+    <p>Consulta el código completo y recursos adicionales en el repositorio:</p>
+    <a href="https://github.com/NeryJim21/Machine_Learning" target="_blank">🔗 GitHub: Machine Learning</a>
+  </section>
+
+  <footer>
+    Proyecto académico · Machine Learning · 2025
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="tree.js"></script>
+</body>
+</html>
